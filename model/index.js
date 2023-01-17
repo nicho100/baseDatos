@@ -18,7 +18,10 @@ const createTable=async()=>{
         })
     } catch(err){
         console.log(err.message)
+    }finally{
+        dbMaria.destroy()
+        dbSqlite.destroy()
     }
 } 
 
-module.exports={createTable}
+createTable()
